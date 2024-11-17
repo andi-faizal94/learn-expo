@@ -1,4 +1,4 @@
-import { View, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 export const AppButton = ({ onPress, title, size, backgroundColor }: any) => (
   <TouchableOpacity
     onPress={onPress}

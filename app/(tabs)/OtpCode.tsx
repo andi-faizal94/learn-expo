@@ -7,13 +7,21 @@ import {
   TextInput,
   View,
 } from "react-native";
+import { Link, router, useLocalSearchParams, useRouter } from "expo-router";
 
-import { AppButton } from "@/components/screen/AppButton";
+import { AppButton } from "@/app/(tabs)/AppButton";
 import { useState } from "react";
 
 const OtpCode = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const router = useRouter();
+  const params = useLocalSearchParams();
+
+  const handlePress = () => {
+    router.push("/(tabs)/Code");
+  };
+
   return (
     <ScrollView>
       <View className="flex justify-center items-center mb-20">
@@ -66,7 +74,12 @@ const OtpCode = () => {
       </View>
 
       <View className="mx-5 ">
-        <AppButton title="Continue" size="sm" backgroundColor="#FF8D4D" />
+        <AppButton
+          title="Continue"
+          size="sm"
+          backgroundColor="#FF8D4D"
+          onPress={handlePress}
+        />
       </View>
     </ScrollView>
   );
