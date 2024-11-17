@@ -1,13 +1,13 @@
+import { useRouter } from "expo-router";
 import React from "react";
 import {
   Image,
-  ScrollView,
+  SafeAreaView,
   StyleSheet,
   Text,
   TextInput,
   View,
 } from "react-native";
-import { Link, router, useLocalSearchParams, useRouter } from "expo-router";
 
 import { AppButton } from "@/app/(tabs)/AppButton";
 import { useState } from "react";
@@ -16,14 +16,13 @@ const OtpCode = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const router = useRouter();
-  const params = useLocalSearchParams();
 
   const handlePress = () => {
     router.push("/(tabs)/Code");
   };
 
   return (
-    <ScrollView>
+    <SafeAreaView>
       <View className="flex justify-center items-center mb-20">
         <Image
           source={require("../../assets/images/Image.png")}
@@ -35,7 +34,6 @@ const OtpCode = () => {
         <Text className="text-lg font-medium text-[#B6B6B6]">
           Enter email and phone number to send one time Password
         </Text>
-        <Text>{email}</Text>
       </View>
       <View className="mx-5 mb-10">
         <TextInput
@@ -81,7 +79,7 @@ const OtpCode = () => {
           onPress={handlePress}
         />
       </View>
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 

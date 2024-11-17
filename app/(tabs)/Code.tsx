@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import { View, Text, ScrollView, StyleSheet, SafeAreaView } from "react-native";
 import React, { useState } from "react";
 import { AppButton } from "@/app/(tabs)/AppButton";
 import {
@@ -22,7 +22,7 @@ const Code = () => {
   const router = useRouter();
 
   return (
-    <ScrollView className="mx-5">
+    <SafeAreaView className="mx-5">
       <View className="mt-12">
         <Icon
           onPress={() => router.push("/(tabs)")}
@@ -58,7 +58,7 @@ const Code = () => {
       </View>
 
       <AppButton title="Confirm" size="sm" backgroundColor="#FF8D4D" />
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 
