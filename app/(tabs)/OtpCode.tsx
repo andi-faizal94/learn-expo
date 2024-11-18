@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Image,
   SafeAreaView,
@@ -8,9 +8,9 @@ import {
   TextInput,
   View,
 } from "react-native";
+import { Platform } from "react-native";
 
 import { AppButton } from "@/app/(tabs)/AppButton";
-import { useState } from "react";
 
 const OtpCode = () => {
   const [email, setEmail] = useState("");
@@ -30,8 +30,26 @@ const OtpCode = () => {
         />
       </View>
       <View className="mx-5 mb-12">
-        <Text className="text-xl font-bold mb-4">OTP Verification</Text>
-        <Text className="text-lg font-medium text-[#B6B6B6]">
+        <Text
+          style={{
+            fontFamily: Platform.select({
+              android: "Poppins-Medium",
+              ios: "Poppins-Black",
+            }),
+          }}
+          className="text-xl font-bold mb-4"
+        >
+          OTP Verification
+        </Text>
+        <Text
+          style={{
+            fontFamily: Platform.select({
+              android: "Poppins-Medium",
+              ios: "Poppins-Black",
+            }),
+          }}
+          className="text-lg font-semibold text-[#B6B6B6]"
+        >
           Enter email and phone number to send one time Password
         </Text>
       </View>

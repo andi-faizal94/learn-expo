@@ -11,6 +11,7 @@ const CELL_COUNT = 4;
 import stylesCustom from "./stylesCustom";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useRouter } from "expo-router";
+import { Platform } from "react-native";
 
 const Code = () => {
   const [value, setValue] = useState("");
@@ -20,6 +21,10 @@ const Code = () => {
     setValue,
   });
   const router = useRouter();
+
+  const handlePress = () => {
+    router.push("/(tabs)/Success");
+  };
 
   return (
     <SafeAreaView className="mx-5">
@@ -31,9 +36,29 @@ const Code = () => {
           color="#CECECE"
         />
       </View>
-      <Text className="mt-10 mb-2 text-2xl text-black">Verification Code</Text>
-      <View className="w-52 mb-10">
-        <Text>We have sent the verification code to your email address</Text>
+      <Text
+        className="mt-10 mb-2 text-2xl text-black font-bold"
+        style={{
+          fontFamily: Platform.select({
+            android: "Poppins-Medium",
+            ios: "Poppins-Black",
+          }),
+        }}
+      >
+        Verification Code
+      </Text>
+      <View className="w-80 mb-10">
+        <Text
+          style={{
+            fontFamily: Platform.select({
+              android: "Poppins-Medium",
+              ios: "Poppins-Black",
+            }),
+          }}
+          className="text-lg font-medium text-[#B6B6B6]"
+        >
+          We have sent the verification code to your email address
+        </Text>
       </View>
       <View className="mb-20">
         <CodeField
@@ -57,7 +82,12 @@ const Code = () => {
         />
       </View>
 
-      <AppButton title="Confirm" size="sm" backgroundColor="#FF8D4D" />
+      <AppButton
+        title="Confirm"
+        size="sm"
+        backgroundColor="#FF8D4D"
+        onPress={handlePress}
+      />
     </SafeAreaView>
   );
 };

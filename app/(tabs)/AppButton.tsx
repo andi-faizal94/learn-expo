@@ -4,11 +4,13 @@ export const AppButton = ({ onPress, title, size, backgroundColor }: any) => (
     onPress={onPress}
     style={[
       styles.appButtonContainer,
-      size === "sm" && {
-        paddingHorizontal: 10,
-        paddingVertical: 10,
-        elevation: 2,
-      },
+      size === "sm"
+        ? {
+            paddingHorizontal: 10,
+            paddingVertical: 10,
+            elevation: 2,
+          }
+        : null,
       backgroundColor && { backgroundColor },
     ]}
   >
