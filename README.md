@@ -1,5 +1,7 @@
 # Welcome to your Expo app 👋
 
+- [UI Asset](<https://www.figma.com/design/TYZk2lL5i65NRY3Slw4KS0/OTP-Verification-UI-Template-(Community)?node-id=0-1&node-type=canvas&t=bM73wwdVJbWjLuyJ-0>)
+
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
